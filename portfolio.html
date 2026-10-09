@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dhanalakshmi R | Developer Portfolio</title>
+
+    <meta name="description" content="Dhanalakshmi R's portfolio featuring Python development, web development, and projects.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #0f172a;
+            --card: #17243a;
+            --nav: #111827;
+            --blue: #38bdf8;
+            --yellow: #facc15;
+            --white: #ffffff;
+            --light: #cbd5e1;
+            --border: #29415f;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: var(--nav);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul a {
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul a:hover,
+        nav ul a.active {
+            color: var(--blue);
+        }
+
+        section {
+            padding: 75px 7%;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+        }
+
+        .title-line {
+            width: 65px;
+            height: 4px;
+            border-radius: 5px;
+            background: var(--blue);
+            margin-bottom: 35px;
+        }
+
+        /* HOME */
+
+        .home {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            background: linear-gradient(120deg, #0f172a, #142b47);
+        }
+
+        .home-content {
+            flex: 1;
+        }
+
+        .welcome {
+            color: var(--blue);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .home h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .home h1 span {
+            color: var(--blue);
+        }
+
+        .home h2 {
+            color: var(--yellow);
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .home p {
+            color: var(--light);
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            background: var(--blue);
+            color: #082033;
+            border: 2px solid var(--blue);
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--blue);
+        }
+
+        .home-image {
+            flex: 0 0 310px;
+            text-align: center;
+        }
+
+        .home-image img {
+            width: 290px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid var(--blue);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .quick-contact {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            color: var(--light);
+            font-size: 14px;
+        }
+
+        .quick-contact a:hover {
+            color: var(--blue);
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #111c30;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--light);
+            margin-bottom: 15px;
+        }
+
+        .highlights {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .highlight {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--card);
+            color: var(--blue);
+        }
+
+        /* EDUCATION */
+
+        .education {
+            background: var(--bg);
+        }
+
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .edu-card {
+            padding: 28px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue);
+        }
+
+        .edu-card h3 {
+            color: var(--yellow);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .edu-card p {
+            color: var(--light);
+            margin: 6px 0;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            background: #111c30;
+        }
+
+        .skill-container {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 22px 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-6px);
+            border-color: var(--blue);
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            color: var(--blue);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .skill-box h3 {
+            font-size: 16px;
+        }
+  
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.skill-box {
+    background: #17243a;
+    border: 1px solid #29415f;
+    padding: 25px 15px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-box:hover {
+    transform: translateY(-6px);
+    border-color: #38bdf8;
+}
+
+.skill-box img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.skill-box h3 {
+    color: white;
+    font-size: 17px;
+}
+
+@media (max-width: 700px) {
+    .skill-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+        /* PROJECTS */
+
+        .projects {
+            background: var(--bg);
+        }
+
+        .project-intro {
+            color: var(--light);
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--blue);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 22px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .project-content h3 span {
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .project-content p {
+            color: var(--light);
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 20px;
+            background: #263d59;
+            color: var(--blue);
+        }
+
+        .project-link {
+            display: inline-block;
+            align-self: flex-start;
+            margin-top: auto;
+            padding: 10px 17px;
+            border-radius: 8px;
+            background: var(--blue);
+            color: #082033;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background: var(--yellow);
+        }
+
+        /* CONTACT */
+
+.contact {
+    background: #111c30;
+}
+
+.contact-intro {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.contact-card {
+    background: #17243a;
+    border: 1px solid #29415f;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    color: #38bdf8;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    color: #facc15;
+    margin-bottom: 8px;
+}
+
+.contact-card a {
+    color: #cbd5e1;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: #38bdf8;
+}
+
+@media (max-width: 600px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px 7%;
+            background: var(--nav);
+            color: var(--light);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer span {
+            color: var(--blue);
+        }
+
+        .back-top {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--blue);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 1050px) {
+            nav {
+                padding: 18px 4%;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+            .home {
+                gap: 25px;
+            }
+
+            .home-image {
+                flex-basis: 260px;
+            }
+
+            .home-image img {
+                width: 250px;
+                height: 320px;
+            }
+
+            .project-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .skill-container {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 4%;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px 16px;
+            }
+
+            nav ul a {
+                font-size: 13px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                min-height: auto;
+                padding-top: 40px;
+                padding-bottom: 50px;
+            }
+
+            .home-image {
+                flex: auto;
+            }
+
+            .home-image img {
+                width: 210px;
+                height: 260px;
+            }
+
+            .home h1 {
+                font-size: 38px;
+            }
+
+            .home h2 {
+                font-size: 20px;
+            }
+
+            .home p {
+                font-size: 15px;
+            }
+
+            .buttons,
+            .quick-contact {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .about-container,
+            .education-container,
+            .contact-container,
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-card img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .home h1 {
+                font-size: 32px;
+            }
+
+            nav ul {
+                gap: 8px 12px;
+            }
+
+            nav ul a {
+                font-size: 12px;
+            }
+
+            .skill-container {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <a href="#home" class="logo">Dhanalakshmi <span>R</span></a>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+            <div class="welcome">Hello, welcome to my portfolio!</div>
+
+            <h1>I'm <span>Dhanalakshmi R</span></h1>
+
+            <h2>Python Developer | Web Developer</h2>
+
+            <p>
+                I am a B.Sc. Information Technology graduate with an
+                interest in Python development and web design. I enjoy
+                building responsive websites and useful web applications
+                using modern technologies.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">View My Projects →</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+
+            <div class="quick-contact">
+                <a href="mailto:dhanarit2005@gmail.com">
+                    ✉ dhanarit2005@gmail.com
+                </a>
+
+                <a href="tel:+919942031090">
+                    ☎ 9942031090
+                </a>
+
+                <span>📍 Madurai, Tamil Nadu</span>
+            </div>
+
+        </div>
+
+        <div class="home-image">
+            <img src="d.jpeg" alt="Dhanalakshmi R">
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <h2 class="section-title">About <span>Me</span></h2>
+                <div class="title-line"></div>
+
+                <p>
+                    I am Dhanalakshmi R, a B.Sc. Information Technology
+                    graduate from Lady Doak College, Madurai.
+                </p>
+
+                <p>
+                    I have completed a Full Stack Python course and have
+                    knowledge of Python, Django, HTML, CSS, JavaScript,
+                    Bootstrap, jQuery, MySQL and MongoDB.
+                </p>
+
+                <p>
+                    I am looking for a fresher opportunity as a Python
+                    Developer, Backend Developer or Web Developer where
+                    I can apply my skills and gain professional experience.
+                </p>
+
+                <div class="highlights">
+                    <div class="highlight">Quick Learner</div>
+                    <div class="highlight">Problem Solver</div>
+                    <div class="highlight">Team Player</div>
+                </div>
+
+            </div>
+
+            <!-- EDUCATION -->
+
+            <div id="education">
+
+                <h2 class="section-title">My <span>Education</span></h2>
+                <div class="title-line"></div>
+
+                <div class="edu-card" style="margin-bottom: 20px;">
+
+                    <h3>B.Sc. Information Technology</h3>
+
+                    <p><strong>College:</strong> Lady Doak College</p>
+                    <p><strong>Location:</strong> Madurai</p>
+                    <p><strong>Duration:</strong> Aug 2023 – Apr 2026</p>
+
+                </div>
+
+                <div class="edu-card">
+
+                    <h3>Higher Secondary Education</h3>
+
+                    <p><strong>School:</strong> OCPM Girls Higher Secondary School</p>
+                    <p><strong>Location:</strong> Madurai</p>
+                    <p><strong>12th Marks:</strong> 408 / 600 (68%)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+  
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <div class="title-line"></div>
+
+    <div class="skill-container">
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <h3>Python</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://logos-world.net/wp-content/uploads/2025/07/Django-Symbol.png" alt="Django">
+            <h3>Django</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+            <h3>HTML5</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+            <h3>CSS3</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <h3>JavaScript</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+            <h3>Bootstrap</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery">
+            <h3>jQuery</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            <h3>MySQL</h3>
+        </div>
+
+        <div class="skill-box">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+            <h3>MongoDB</h3>
+        </div>
+
+        <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
+         alt="Flask">
+        <p>Flask</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <div class="title-line"></div>
+
+        <p class="project-intro">
+            Here are some of the websites I have worked on.
+        </p>
+
+        <div class="project-container">
+
+            <!-- JK FURNITURES -->
+
+            <div class="project-card">
+
+                <img src="furnitureweb.png" alt="JK Furnitures Website">
+
+                <div class="project-content">
+
+                    <h3>JK Furnitures <span>(Django)</span></h3>
+
+                    <p>
+                        A furniture website featuring product categories,
+                        product details, a contact form and an order system.
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PLANT PARADISE -->
+
+            <div class="project-card">
+
+                <img src="plantwebs.png" alt="Plant Paradise Website">
+
+                <div class="project-content">
+
+                    <h3>Plant Paradise <span>(Flask)</span></h3>
+
+                    <p>
+                        A plant website showcasing different plants,
+                        gardening information and a user-friendly
+                        shopping experience.
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- KSG ASSOCIATES -->
+
+            <div class="project-card">
+
+                <img src="ksg1.png" alt="KSG Associates Website">
+
+                <div class="project-content">
+
+                    <h3>KSG Associates <span>(Frontend)</span></h3>
+
+                    <p>
+                        A professional website for a chartered accountant
+                        firm with Home, About, Services and Contact pages.
+                        Developed as a frontend project.
+                    </p>
+
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Responsive Design</span>
+                    </div>
+
+                    <a href="https://ksgassociates.co.in/"
+                       class="project-link"
+                       target="_blank" rel="noopener">
+                        View Live Website →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">Contact <span>Me</span></h2>
+    <div class="title-line"></div>
+
+    <p class="contact-intro">
+        Interested in working with me? Feel free to contact me
+        for job opportunities or web development projects.
+    </p>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <div class="contact-icon">✉</div>
+
+            <h3>Email Address</h3>
+
+            <a href="mailto:dhanarit2005@gmail.com">
+                dhanarit2005@gmail.com
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="contact-icon">☎</div>
+
+            <h3>Phone Number 1</h3>
+
+            <a href="tel:+919942031090">
+                9942031090
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="contact-icon">☎</div>
+
+            <h3>Phone Number 2</h3>
+
+            <a href="tel:+917200063823">
+                7200063823
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="contact-icon">in</div>
+
+            <h3>LinkedIn Profile</h3>
+
+            <a href="https://www.linkedin.com/in/rdhanalakshmi-r-11a2b2440/"
+               target="_blank" rel="noopener">
+                View My LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Dhanalakshmi R</span> |
+            All Rights Reserved
+        </p>
+
+        <a href="#home" class="back-top">Back to Top ↑</a>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        const navLinks = document.querySelectorAll("nav ul a");
+
+        navLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                navLinks.forEach(function(item) {
+                    item.classList.remove("active");
+                });
+
+                link.classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+</html>
+
